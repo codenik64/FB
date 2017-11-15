@@ -1,0 +1,69 @@
+﻿@model IEnumerable<BattleFieldConnection.Models.Education>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Qualification)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FieldOfStudy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.grade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hobbies)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.To)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.From)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Qualification)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FieldOfStudy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.grade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hobbies)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.To)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.From)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EducationID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EducationID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EducationID })
+        </td>
+    </tr>
+}
+
+</table>
