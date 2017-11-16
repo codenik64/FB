@@ -5,16 +5,33 @@
     {
     @Html.AntiForgeryToken()
 
-    <ul class="nav navbar-nav navbar-right">
-        <li>
-            @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-        </li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-    </ul>
-    }
-}
-else
-{
+        <ul class="nav navbar-nav navbar-right">
+            <li class="active">@{Html.RenderAction("FriendList", "Friends");}</li>
+            <li class="dropdown">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle">@User.Identity.GetUserName()<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li>@Html.ActionLink("Manage Account", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })</li>
+                    <li class="divider"></li>
+                    <li>@Html.ActionLink("Profile", "ProfileInfo", "Developers")</li>
+                        <li class="divider"></li>
+                        <li>@Html.ActionLink("Change Profile Image", "ChangeImage", "Developers")</li>
+                   
+                        @*<li class="divider"></li>
+                        <li>@Html.ActionLink("", "DeclinedTasks", "Tasking")</li>
+                    
+                   
+                        <li class="divider"></li>
+                        <li>@Html.ActionLink("All Tasks", "Index", "Tasking")</li>*@
+                    
+
+                </ul>
+            </li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+        </ul>
+                    }
+                }
+                else
+                {
     <ul class="nav navbar-nav navbar-right">
         <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
         <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>

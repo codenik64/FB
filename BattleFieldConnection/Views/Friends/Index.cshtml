@@ -1,0 +1,50 @@
+﻿@model BattleFieldConnection.DataLayer.FriendBusiness
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+   
+</p>
+<table class="table">
+    <tr>
+        <th>
+           Developers Name
+        </th>
+        <th>
+            Developers Surname
+        </th>
+
+        <th>
+            Image
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.FriendList) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Developers.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Developers.Surname)
+        </td>
+
+        <td>
+            <img src="@Url.Action("RenderImage","Developers", new { id = item.DevId})" width="60" height="60" class="img-circle" />
+        </td>
+     
+        <td>
+          
+            
+
+            <button type="button" class="btn-danger" onclick="location.href='@Url.Action("Delete", "Friends", new { id = item.FriendID }, "")';return false;">Remove Friend</button>
+        </td>
+    </tr>
+}
+
+</table>

@@ -151,11 +151,11 @@ namespace BattleFieldConnection.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model , HttpPostedFileBase file)
         {
-            if (file != null & file.ContentLength > 0)
-            {
-                model.ImageType = Path.GetExtension(file.FileName);
-                model.Image = ConvertToBytes(file);
-            }
+            //if (file != null & file.ContentLength > 0)
+            //{
+            //    model.ImageType = Path.GetExtension(file.FileName);
+            //    model.Image = ConvertToBytes(file);
+            //}
 
             if (ModelState.IsValid)
             {
@@ -182,23 +182,23 @@ namespace BattleFieldConnection.Controllers
             return View(model);
         }
 
-        public byte[] ConvertToBytes(HttpPostedFileBase file)
-        {
-            BinaryReader reader = new BinaryReader(file.InputStream);
-            return reader.ReadBytes((int)file.ContentLength);
-        }
+        //public byte[] ConvertToBytes(HttpPostedFileBase file)
+        //{
+        //    BinaryReader reader = new BinaryReader(file.InputStream);
+        //    return reader.ReadBytes((int)file.ContentLength);
+        //}
 
-        public FileStreamResult RenderImage(int id)
-        {
-            ApplicationDbContext db = new ApplicationDbContext();
-            MemoryStream ms = null;
-            var s = db.Developers.FirstOrDefault(x => x.DevId == id);
-            if (s != null)
-            {
-                ms = new MemoryStream(s.Image);
-            }
-            return new FileStreamResult(ms, s.ImageType);
-        }
+        //public FileStreamResult RenderImage(int id)
+        //{
+        //    ApplicationDbContext db = new ApplicationDbContext();
+        //    MemoryStream ms = null;
+        //    var s = db.Developers.FirstOrDefault(x => x.DevId == id);
+        //    if (s != null)
+        //    {
+        //        ms = new MemoryStream(s.Image);
+        //    }
+        //    return new FileStreamResult(ms, s.ImageType);
+        //}
 
         //
         // GET: /Account/ConfirmEmail

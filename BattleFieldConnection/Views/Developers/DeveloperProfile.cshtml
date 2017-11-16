@@ -50,7 +50,7 @@
 
         <div class="col-sm-4">
             <div class="thumbnail">
-                <img src="@Url.Action("RenderImage", "Developers", new { id = product.DevId})" width="250" height="250" />
+                <img src="@Url.Action("RenderImage", "Images", new { id = ViewBag.id})" width="250" height="250" />
                 <p><strong>@product.Name</strong></p>
                 <button type="button" class="btn" data-toggle="modal" data-target="#myModal-@(product.DevId)"> Profile </button>
             </div>
@@ -71,7 +71,7 @@
                     </div>
                     <div class="modal-body" style="padding:40px 50px;">
                         <div class="col-md-5">
-                            <img src="@Url.Action("RenderImage", "Developers", new { id = product.DevId })" width="150" height="150" />
+                            <img src="@Url.Action("RenderImage", "Images", new { id = ViewBag.id })" width="150" height="150" />
 
                         </div>
                         <div class="col-md-7">
@@ -82,6 +82,7 @@
 
                     <div style="margin-top:175px" class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn" onclick="location.href='@Url.Action("AddFriends", "Friends", new { id = product.DevId }, "")';return false;">Add Friend</button>
                        
                     </div>
                 </div>

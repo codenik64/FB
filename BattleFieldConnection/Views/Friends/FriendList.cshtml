@@ -1,0 +1,5 @@
+﻿@model BattleFieldConnection.DataLayer.FriendBusiness
+@{
+    ViewBag.Title = "FriendList";
+}
+<a href='@Url.Action("Index", "Friends")'><strong>Friends</strong>  <span id="Friend-status" class="badge">@ViewData["FriendCount"]</span></a>

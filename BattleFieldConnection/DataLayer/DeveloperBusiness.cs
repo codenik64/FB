@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using BattleFieldConnection.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Data.Entity;
 
 namespace BattleFieldConnection.DataLayer
 {
@@ -32,8 +33,10 @@ namespace BattleFieldConnection.DataLayer
                 City = x.City,
                 industry = x.industry,
                 Summary = x.Summary,
-                Image = x.Image,
-                ImageType = x.ImageType
+                //Image = x.Image,
+                //ImageType = x.ImageType,
+                //IsConnected = x.IsConnected,
+                //IsAccepted = x.IsAccepted
             }).ToList();
         }
 
@@ -51,8 +54,8 @@ namespace BattleFieldConnection.DataLayer
             d.City = model.City;
             d.industry = model.industry;
             d.Summary = model.Summary;
-            d.Image = model.Image;
-            d.ImageType = model.ImageType;
+            //d.Image = model.Image;
+            //d.ImageType = model.ImageType;
             db.Developers.Add(d);
             db.SaveChanges();
         }
@@ -60,11 +63,41 @@ namespace BattleFieldConnection.DataLayer
         public List<Developers> SimlarProfile( string username)
         {
             //Developers d = new Developers();
-            var s = HttpContext.Current.User.Identity.Name;
+          
             var foundDeveloper = db.Developers.FirstOrDefault(x => x.Email == username);
 
             return db.Developers.Where(x => x.City == foundDeveloper.City || x.Education == foundDeveloper.Education || x.CurrentPositon == foundDeveloper.CurrentPositon).ToList();
            
         }
+
+        public Developers FindById( int id)
+        {
+            return GetAll().FirstOrDefault(x => x.DevId == id);
+        }
+
+        //public void EditImage(Developers d)
+        //{
+        //    Developers se = db.Developers.FirstOrDefault(x => x.Email == HttpContext.Current.User.Identity.Name);
+       
+        //    se.Image = d.Image;
+        //    se.ImageType = d.ImageType;
+        //    db.SaveChanges();
+
+        //}
+
+       
+        //public List<Developers>AllDevelopers()
+        //{
+        //    return GetAll().Where(x => x.IsConnected == true).ToList();
+        //}
+
+        //public void Connect(Developers d)
+        //{
+        //    Developers ss = new Developers();
+        //    ss = db.Developers.FirstOrDefault(x => x.Email == HttpContext.Current.User.Identity.Name);
+        //    ss.IsConnected = true;
+        //    db.Entry(ss).State = EntityState.Modified;
+        //    db.SaveChanges();
+        //}
     }
 }

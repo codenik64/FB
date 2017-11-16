@@ -1,0 +1,22 @@
+﻿<div class="row">
+<div class="col-lg-3 text-center" style="padding: 30px; background-color:black; float: left;">
+
+    <div>
+        <img src="@Url.Action("RenderImage", "Images", new { id = ViewBag.id })" width="130" height="130" class="img-circle" />
+    </div>
+    <h2 style="color:whitesmoke">Welcome @ViewBag.FullName!</h2>
+    
+    <div><b>@ViewBag.h</b></div>
+    <hr style="color:black"/>
+    <div><p style="font-size:15px;"><b style="color:darkslategrey">@ViewBag.Sum</b></p></div>
+    <p></p>
+   
+</div>
+</div>
+<div>
+    <div class="row">
+        <div class="col-sm-4 table-bordered" >Hi</div>
+        <div class="col-sm-4 table-bordered">Hello</div>
+        <div class="col-sm-4 table-bordered">World</div>
+    </div>
+</div>

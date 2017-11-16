@@ -1,11 +1,5 @@
 ﻿@model IEnumerable<BattleFieldConnection.Models.Developers>
 
-@{
-    ViewBag.Title = "Index";
-}
-
-<h2>Index</h2>
-
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -45,7 +39,8 @@
             @Html.DisplayNameFor(model => model.Summary)
         </th>
        
-        
+     
+       
         <th></th>
     </tr>
 
@@ -85,15 +80,14 @@
             @Html.DisplayFor(modelItem => item.Summary)
         </td>
         @*<td>
-            <img src="@Url.Action("RenderImage","Developers", new { id = item.DevId})" width="60" height="60"/>
+            <img src="@Url.Action("RenderImage","Developers", new { id = item.DevId})" width="60" height="60" />
         </td>*@
-      
+
+       
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.DevId }) |
             @Html.ActionLink("Details", "Details", new { id=item.DevId }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.DevId })
-            @*@Html.ActionLink("Profile Image", "ChangeImage", new { id = item.DevId })*@
-           
         </td>
     </tr>
 }

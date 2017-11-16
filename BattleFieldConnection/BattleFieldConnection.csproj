@@ -193,7 +193,9 @@
     <Compile Include="Controllers\DevelopersController.cs" />
     <Compile Include="Controllers\EducationsController.cs" />
     <Compile Include="Controllers\ExperiencesController.cs" />
+    <Compile Include="Controllers\FriendsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImagesController.cs" />
     <Compile Include="Controllers\LanguagesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
@@ -202,6 +204,7 @@
     <Compile Include="DataLayer\CourseBusiness.cs" />
     <Compile Include="DataLayer\DeveloperBusiness.cs" />
     <Compile Include="DataLayer\ExperienceBusiness.cs" />
+    <Compile Include="DataLayer\FriendBusiness.cs" />
     <Compile Include="DataLayer\LanguageBusiness.cs" />
     <Compile Include="DataLayer\ProjectBusiness.cs" />
     <Compile Include="DataLayer\SkillsBusiness.cs" />
@@ -216,7 +219,9 @@
     <Compile Include="Models\Education.cs" />
     <Compile Include="DataLayer\EducationBusiness.cs" />
     <Compile Include="Models\Experience.cs" />
+    <Compile Include="Models\Friends.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Images.cs" />
     <Compile Include="Models\Language.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Project.cs" />
@@ -327,6 +332,22 @@
     <Content Include="Views\VolunteerExperiences\VolunteerInfo.cshtml" />
     <Content Include="Views\VolunteerExperiences\Index.cshtml" />
     <Content Include="Views\Developers\DeveloperProfile.cshtml" />
+    <Content Include="Views\Developers\ChangeImage.cshtml" />
+    <Content Include="Views\Developers\FriendList.cshtml" />
+    <Content Include="Views\Developers\Connect.cshtml" />
+    <Content Include="Views\Friends\Create.cshtml" />
+    <Content Include="Views\Friends\Delete.cshtml" />
+    <Content Include="Views\Friends\Details.cshtml" />
+    <Content Include="Views\Friends\Edit.cshtml" />
+    <Content Include="Views\Friends\Index.cshtml" />
+    <Content Include="Views\Friends\FriendList.cshtml" />
+    <Content Include="Views\Home\UniqueDeveloper.cshtml" />
+    <Content Include="Views\Shared\_Experience.cshtml" />
+    <Content Include="Views\Images\Create.cshtml" />
+    <Content Include="Views\Images\Delete.cshtml" />
+    <Content Include="Views\Images\Details.cshtml" />
+    <Content Include="Views\Images\Edit.cshtml" />
+    <Content Include="Views\Images\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

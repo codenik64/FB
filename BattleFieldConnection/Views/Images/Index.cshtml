@@ -1,0 +1,39 @@
+﻿@model IEnumerable<BattleFieldConnection.Models.Images>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.username)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <img src="@Url.Action("RenderImage", "Images", new { id = item.ImageID})" width="40" height="40" class="img-circle"/>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.username)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ImageID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ImageID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ImageID })
+        </td>
+    </tr>
+}
+
+</table>

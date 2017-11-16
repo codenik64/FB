@@ -78,8 +78,8 @@ namespace BattleFieldConnection.Models
         public string City { get; set; }
         public string industry { get; set; }
         public string Summary { get; set; }
-        public byte[] Image { get; set; }
-        public string ImageType { get; set; }
+        //public byte[] Image { get; set; }
+        //public string ImageType { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]

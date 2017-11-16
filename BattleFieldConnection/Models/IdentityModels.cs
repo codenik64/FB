@@ -32,6 +32,8 @@ namespace BattleFieldConnection.Models
 
         public System.Data.Entity.DbSet<BattleFieldConnection.Models.Developers> Developers { get; set; }
         public System.Data.Entity.DbSet<BattleFieldConnection.Models.Courses> Courses { get; set; }
+
+        public System.Data.Entity.DbSet<BattleFieldConnection.Models.Friends> Friends { get; set; }
         public System.Data.Entity.DbSet<BattleFieldConnection.Models.Experience> Experiences { get; set; }
 
         public System.Data.Entity.DbSet<BattleFieldConnection.Models.Education> Educations { get; set; }
@@ -43,5 +45,7 @@ namespace BattleFieldConnection.Models
         public System.Data.Entity.DbSet<BattleFieldConnection.Models.Skills> Skills { get; set; }
 
         public System.Data.Entity.DbSet<BattleFieldConnection.Models.VolunteerExperience> VolunteerExperiences { get; set; }
+
+        public System.Data.Entity.DbSet<BattleFieldConnection.Models.Images> Images { get; set; }
     }
 }
