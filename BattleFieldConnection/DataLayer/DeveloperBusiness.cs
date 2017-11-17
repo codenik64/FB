@@ -33,10 +33,7 @@ namespace BattleFieldConnection.DataLayer
                 City = x.City,
                 industry = x.industry,
                 Summary = x.Summary,
-                //Image = x.Image,
-                //ImageType = x.ImageType,
-                //IsConnected = x.IsConnected,
-                //IsAccepted = x.IsAccepted
+               
             }).ToList();
         }
 
@@ -54,15 +51,14 @@ namespace BattleFieldConnection.DataLayer
             d.City = model.City;
             d.industry = model.industry;
             d.Summary = model.Summary;
-            //d.Image = model.Image;
-            //d.ImageType = model.ImageType;
+         
             db.Developers.Add(d);
             db.SaveChanges();
         }
 
         public List<Developers> SimlarProfile( string username)
         {
-            //Developers d = new Developers();
+           
           
             var foundDeveloper = db.Developers.FirstOrDefault(x => x.Email == username);
 
@@ -75,29 +71,6 @@ namespace BattleFieldConnection.DataLayer
             return GetAll().FirstOrDefault(x => x.DevId == id);
         }
 
-        //public void EditImage(Developers d)
-        //{
-        //    Developers se = db.Developers.FirstOrDefault(x => x.Email == HttpContext.Current.User.Identity.Name);
-       
-        //    se.Image = d.Image;
-        //    se.ImageType = d.ImageType;
-        //    db.SaveChanges();
-
-        //}
-
-       
-        //public List<Developers>AllDevelopers()
-        //{
-        //    return GetAll().Where(x => x.IsConnected == true).ToList();
-        //}
-
-        //public void Connect(Developers d)
-        //{
-        //    Developers ss = new Developers();
-        //    ss = db.Developers.FirstOrDefault(x => x.Email == HttpContext.Current.User.Identity.Name);
-        //    ss.IsConnected = true;
-        //    db.Entry(ss).State = EntityState.Modified;
-        //    db.SaveChanges();
-        //}
+        
     }
 }

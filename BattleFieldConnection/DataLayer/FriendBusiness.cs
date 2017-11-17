@@ -22,12 +22,6 @@ namespace BattleFieldConnection.DataLayer
             {
                 context.Session[FriendSession] = context.User.Identity.Name;
             }
-            else
-            {
-                Guid tempList = Guid.NewGuid();
-                // Send tempCartId back to client as a cookie
-                context.Session[FriendSession] = tempList.ToString();
-            }
 
 
             return context.Session[FriendSession].ToString();
@@ -56,7 +50,8 @@ namespace BattleFieldConnection.DataLayer
                 {
                     DevId = developer.DevId,
                     FriendList = FriendlistID,
-                    Count = 1,
+                    Count = 1
+                   
 
                 };
                 db.Friends.Add(foundDeveloper);
@@ -71,15 +66,9 @@ namespace BattleFieldConnection.DataLayer
             int FriendCount = 0;
             if (foundDeveloper != null)
             {
-                if (foundDeveloper.Count >= 1)
-                {
-                    foundDeveloper.Count--;
-                    FriendCount = foundDeveloper.Count;
-                }
-                else
-                {
+     
                     db.Friends.Remove(foundDeveloper);
-                }
+                
                 db.SaveChanges();
             }
             return FriendCount;

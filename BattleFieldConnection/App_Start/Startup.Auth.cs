@@ -55,8 +55,10 @@ namespace BattleFieldConnection
             //   consumerSecret: "");
 
             //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            //   appId: "1436111569843616",
+            //   appSecret: "b222d090e22c17fecb575789bf673aa9");
+
+
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{

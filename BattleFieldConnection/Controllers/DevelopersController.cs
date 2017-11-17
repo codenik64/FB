@@ -31,43 +31,19 @@ namespace BattleFieldConnection.Controllers
         //People you may know
         public ActionResult DeveloperProfile()
         {
-            var img = db.Images.FirstOrDefault(x => x.username == User.Identity.Name);
-            var a = img.ImageID;
-            ViewBag.id = a;
+            
+            //Developers d = new Developers();
+          
+            //var s = db.Developers.Where(x => x.DevId == d.DevId).FirstOrDefault();
+            //var img = db.Images.FirstOrDefault(x => x.username == s.Email);
+            //var i = img.ImageID;
+            //ViewBag.id = i;
             return View(devb.SimlarProfile(User.Identity.Name));
         }
 
 
-        //public ActionResult ChangeImage(int id)
-        //{
-        //    return View(devb.FindById(id));
-        //}
+       
 
-
-        //[HttpPost]
-        //public ActionResult ChangeImage(Developers model, HttpPostedFileBase file)
-        //{
-        //    if (file != null && file.ContentLength > 0)
-        //    {
-        //        model.ImageType = Path.GetExtension(file.FileName);
-        //        model.Image = ConvertToBytes(file);
-        //        devb.EditImage(model);
-        //    }
-        //    return View(model);
-        //}
-
-        //public ActionResult FriendList()
-        //{
-        //    var dev = db.Developers.FirstOrDefault(x => x.Email == User.Identity.Name);
-        //    var n = devb.AllDevelopers();
-        //    return View(n);
-        //}
-
-        //public ActionResult Connect(Developers model)
-        //{
-        //    devb.Connect(model);
-        //    return RedirectToAction("FriendList");
-        //}
 
         // GET: Developers/Details/5
         public ActionResult Details(int? id)
@@ -95,13 +71,9 @@ namespace BattleFieldConnection.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "DevId,Name,Surname,Email,Headline,CurrentPositon,Education,Country,ZipCode,City,industry,Summary,Image,ImageType")] Developers developers , HttpPostedFileBase file)
+        public ActionResult Create([Bind(Include = "DevId,Name,Surname,Email,Headline,CurrentPositon,Education,Country,ZipCode,City,industry,Summary,Image,ImageType")] Developers developers )
         {
-            //if (file != null && file.ContentLength > 0)
-            //{
-            //    developers.ImageType = Path.GetExtension(file.FileName);
-            //    developers.Image = ConvertToBytes(file);
-            //}
+           
             if (ModelState.IsValid)
             {
                 db.Developers.Add(developers);
@@ -112,22 +84,7 @@ namespace BattleFieldConnection.Controllers
             return View(developers);
         }
 
-        //public byte[] ConvertToBytes(HttpPostedFileBase file)
-        //{
-        //    BinaryReader reader = new BinaryReader(file.InputStream);
-        //    return reader.ReadBytes((int)file.ContentLength);
-        //}
-
-        //public FileStreamResult RenderImage(int id)
-        //{
-        //    MemoryStream ms = null;
-        //    var s = db.Developers.FirstOrDefault(x => x.DevId == id);
-        //    if (s!= null)
-        //    {
-        //        ms = new MemoryStream(s.Image);
-        //    }
-        //    return new FileStreamResult(ms, s.ImageType);
-        //}
+     
         // GET: Developers/Edit/5
         public ActionResult Edit(int? id)
         {
